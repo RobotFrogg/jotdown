@@ -1,6 +1,7 @@
+loadSettings();
+
 function init() {
     wordCount();
-    loadSettings();
 }
 
 // Dummy Data Hotkeys //
@@ -137,14 +138,25 @@ function loadSettings() {
 
     if (loadCookieSettings) {
         console.log('all cookies found');
-        // actual loading in settings
-        
+
+        // load darkMode
+        if (document.cookie.includes('darkMode=true')) {
+
+            document.body.classList.toggle("dark-theme");
+            document.getElementById('darkmode-checkbox').checked = true;
+
+
+        } else{
+            // stay light mode
+        }
+
+
     } else {
         // one or more cookies not found, generate ALL default cookies
         console.log('one or more cookies missing')
         document.cookie = 'fontSize=20';
         document.cookie = 'fontFamily=Tahoma';
-        document.cookie = 'darkMode=true';
+        document.cookie = 'darkMode=false';
         document.cookie = 'wordCounter=true';
         document.cookie = 'copyAll=true';
     }
