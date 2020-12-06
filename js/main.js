@@ -168,7 +168,7 @@ function loadSettings() {
 
 // turn off word counter //
 
-// turn off memory calculator //
+// turn off memory calculator ///
 
 
 // get time //
