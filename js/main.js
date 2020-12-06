@@ -36,17 +36,6 @@ $(function() {
 
 // Shortcut: Enable Menu Selection //
 
-
-// Shortcut: Enable Menu Selection //
-
-
-// Shortcut: Enable Menu Selection //
-
-
-
-// Styling: Writing Tab Indent //
-
-
 // Styling: Writing Tab Indent //
 document.getElementById('text').addEventListener('keydown', function(e) { //listen to  text, and if keydown
     if (e.key == 'Tab') { //tab
@@ -57,7 +46,6 @@ document.getElementById('text').addEventListener('keydown', function(e) { //list
         this.selectionStart = this.selectionEnd = start + 1;
     }
 });
-
 
 // Storage: Save Text Content In Editor //
 let textarea = document.getElementById("text");
@@ -94,14 +82,6 @@ function openSettings() {
 function closeSettings() {
     document.getElementById("nav").style.width = "0%";
 }
-// memory counter function //
-
-function localStorageSpace(){
-    let allStrings = localStorage.getItem("text");
-    let finalcalc = allStrings ? + (((allStrings.length*16)/(8*1024))) + ' KB' : '0 KB';
-    $('#memoryCounter').html(finalcalc);
-
-};
 
 // word counter function //
 function wordCount(){
@@ -118,13 +98,9 @@ $('textarea').on('input', wordCount);
 
 // turn off word counter //
 
-
 // Close Settings //
 
-
-
 // Settings Option //
-
 
 // Save Settings //
 // no code here, cookies will be updated live whenever changes are made (ex. changing font size)
@@ -143,7 +119,6 @@ function toggleSetting(setting) {
         document.cookie = setting + '=true';
     }
 }
-
 
 // Load Settings //
 function loadSettings() {
@@ -179,20 +154,33 @@ function loadSettings() {
 
 // turn off word counter //
 
-// turn off memory calculator //
+// turn off memory calculator ///
+
+// get time //
+function getTime() {
+    let today = new Date();
+    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    let time = today.getHours() + ":" + today.getMinutes();
+    let dateTime = date + ' ' + time;
+    $('#clock').html(dateTime);
+}
 
 // turn off time //
 
 // time counter //
 
-
 // Loop: for when you're too lazy to code and just want it to run every sec //
 
-
-// Loop: for when you're too lazy to code and just want it to run every sec
 // Loop runs code every 1 second. useful for things like a live updating clock! Or if you want to spam the alert window... - George Z
 
 (function move() {
     setTimeout(move, 1000);
-    localStorageSpace();
+    getTime();
 })();
+
+
+(function move() {
+    localStorageSpace();
+    setTimeout(move, 50);
+})();
+
