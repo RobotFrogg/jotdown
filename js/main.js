@@ -1,6 +1,11 @@
 function init(){
-        loadSettings()
+        wordCount();
+        loadSettings();
 }
+// Dummy Data Hotkeys //
+shortcuts.add('alt+q', function() {
+    alert("test");
+})
 
 // Toggle Colour Theme //
 const btn = document.querySelector(".btn-toggle");
@@ -99,7 +104,7 @@ function wordCount(){
         characters = value.length;
     if(!characters)words=0;
 
-    //$('#insert word counter element id here').html('<br>'+"W: "+ words +"  C: "+ characters);
+    $('#wordCounter').html('<br>'+"W: "+ words +"  C: "+ characters);
     //alert("W: "+ words +"  C: "+ characters);
 
 }

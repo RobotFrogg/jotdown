@@ -80,3 +80,15 @@ button {
     outline: none;
     border: none;
 }
+
+/* On Screen Interface Elements*/
+#wordCounter{
+    color: var(--text-color);
+    font-size: 15px;
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+}
+
+
+
