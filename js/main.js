@@ -1,17 +1,18 @@
-function init(){
-        wordCount();
-        loadSettings();
+function init() {
+    wordCount();
+    loadSettings();
 }
+
 // Dummy Data Hotkeys //
 shortcuts.add('alt+q', function() {
     alert("test");
 })
 
 // Toggle Colour Theme //
-const btn = document.querySelector(".btn-toggle");
+const toggle = document.getElementById("color-toggle");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
-btn.addEventListener("click", function () {
+toggle.addEventListener("click", function () {
     if (prefersDarkScheme.matches) {
         document.body.classList.toggle("light-theme");
     } else {

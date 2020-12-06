@@ -66,7 +66,7 @@ textarea {
     border: 0 none white;
     width: 100%;
     overflow: hidden;
-    padding: 5px;
+    padding: 15px 0;
     color: var(--text-color);
     background-color: var(--bkg-color);
     outline: none;
@@ -90,5 +90,79 @@ button {
     right: 40px;
 }
 
+.toggle-btn {
+    position: relative;
+    width: 36px;
+    height: 19px;
+    float: right;
+    margin-right: 20px;
+    border-radius: 10px;
+}
 
+input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+}
 
+#color-toggle span {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    opacity: 1;
+    background-color: #eee;
+    /*box-shadow: 0 2px 25px #d9d9d9;*/
+    border-radius: 10px;
+    transition: 0.2s ease background-color, 0.2s ease opacity;
+}
+
+#color-toggle span:before, #color-toggle span:after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    transition: 0.5s ease transform, 0.2s ease background-color;
+}
+
+#color-toggle span:before {
+    background-color: #eee;
+    transform: translate(-15px,0px);
+    z-index: 1;
+}
+
+#color-toggle span:after {
+    background-color: #222;
+    transform: translate(2px,0px);
+    z-index: 0;
+}
+
+#color-toggle input[type="checkbox"]:checked + span {
+    background-color: #222;
+}
+
+#color-toggle input[type="checkbox"]:active + span {
+    opacity: 0.5;
+}
+
+#color-toggle input[type="checkbox"]:checked + span:before {
+    background-color: #222;
+    transform: translate(14px,-5px);
+}
+
+#color-toggle input[type="checkbox"]:checked + span:after {
+    background-color: #eee;
+    transform: translate(18px,0px);
+}
