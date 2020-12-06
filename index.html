@@ -3,32 +3,32 @@
 
 <head>
   <meta charset="utf-8">
-  <title></title>
+  <title>JotDown</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <meta property="og:title" content="">
-  <meta property="og:type" content="">
-  <meta property="og:url" content="">
-  <meta property="og:image" content="">
-
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="apple-touch-icon" href="icon.png">
   <!-- Place favicon.ico in the root directory -->
 
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/main.css">
 
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/index.css">
+
   <meta name="theme-color" content="#fafafa">
 </head>
 
-<body>
+<body onload="init();">
 
   <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
   <script src="js/vendor/modernizr-3.11.2.min.js"></script>
   <script src="js/plugins.js"></script>
   <script src="js/main.js"></script>
+
+  <!-- Content Begins Here -->
+  <div class="text">
+    <textarea rows="1" id="text" placeholder="Start typing..."></textarea>
+  </div>
 
   <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
   <script>

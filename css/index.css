@@ -1,0 +1,16 @@
+/* Main Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
+
+textarea {
+    border: 0 none white;
+    position: relative;
+    width: 40%;
+    overflow: hidden;
+    margin: auto;
+    padding: 5px;
+    outline: none;
+    background-color: white;
+    resize: none;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 17px;
+}
