@@ -43,16 +43,6 @@ $(function() {
 // Styling: Writing Tab Indent //
 
 
-
-// Storage: Save Text Content In Editor //
-
-
-// write to local storage //
-
-
-//read local storage //
-
-
 // Styling: Writing Tab Indent //
 document.getElementById('text').addEventListener('keydown', function(e) { //listen to  text, and if keydown
     if (e.key == 'Tab') { //tab
@@ -92,11 +82,22 @@ if (document.readyState === "loading") {
 }
 
 // Open Settings Menu //
-
+function openSettings() {
+    document.getElementById("nav").style.width = "100%";
+}
 
 // Open Settings Menu //
+function closeSettings() {
+    document.getElementById("nav").style.width = "0%";
+}
+// memory counter function //
 
+function localStorageSpace(){
+    let allStrings = localStorage.getItem("text");
+    let finalcalc = allStrings ? + (((allStrings.length*16)/(8*1024))) + ' KB' : '0 KB';
+    $('#memoryCounter').html(finalcalc);
 
+};
 
 // word counter function //
 function wordCount(){
@@ -173,4 +174,5 @@ function loadSettings() {
 
 (function move() {
     setTimeout(move, 1000);
+    localStorageSpace();
 })();
