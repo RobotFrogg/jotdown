@@ -90,14 +90,7 @@ function openSettings() {
 function closeSettings() {
     document.getElementById("nav").style.width = "0%";
 }
-// memory counter function //
 
-function localStorageSpace(){
-    let allStrings = localStorage.getItem("text");
-    let finalcalc = allStrings ? + (((allStrings.length*16)/(8*1024))) + ' KB' : '0 KB';
-    $('#memoryCounter').html(finalcalc);
-
-};
 
 // word counter function //
 function wordCount(){
@@ -177,6 +170,16 @@ function loadSettings() {
 
 // turn off memory calculator //
 
+
+// get time //
+function getTime() {
+    let today = new Date();
+    let date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+    let time = today.getHours() + ":" + today.getMinutes();
+    let dateTime = date + ' ' + time;
+    $('#clock').html(dateTime);
+}
+
 // turn off time //
 
 // time counter //
@@ -190,5 +193,12 @@ function loadSettings() {
 
 (function move() {
     setTimeout(move, 1000);
-    localStorageSpace();
+    getTime();
 })();
+
+
+(function move() {
+    localStorageSpace();
+    setTimeout(move, 50);
+})();
+
