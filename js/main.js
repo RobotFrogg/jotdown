@@ -1,36 +1,17 @@
+function init(){
+
+}
+
+
 // Textarea Auto-Resize
-
-let observe;
-if (window.attachEvent) {
-    observe = function (element, event, handler) {
-        element.attachEvent('on'+event, handler);
-    };
-}
-else {
-    observe = function (element, event, handler) {
-        element.addEventListener(event, handler, false);
-    };
-}
-function init () {
-    var text = document.getElementById('text');
-    function resize () {
-        text.style.height = 'auto';
-        text.style.height = text.scrollHeight+'px';
-    }
-    /* 0-timeout to get the already changed text */
-    function delayedResize () {
-        window.setTimeout(resize, 0);
-    }
-    observe(text, 'change',  resize);
-    observe(text, 'cut',     delayedResize);
-    observe(text, 'paste',   delayedResize);
-    observe(text, 'drop',    delayedResize);
-    observe(text, 'keydown', delayedResize);
-
-    text.focus();
-    text.select();
-    resize();
-}
+$(function() {
+    $('textarea').each(function() {
+        this.setAttribute('style', 'height:' + (this.scrollHeight));
+    }).on('input', function() {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+    });
+});
 
 //
 // Shortcut: Enable Menu Selection
@@ -47,11 +28,31 @@ function init () {
 //
 // Storage: Save Text Content In Editor
 //
+let textarea = document.getElementById("text");
+textarea.addEventListener('input', writeLocalStorage);
 
-//write to local storage
+function writeLocalStorage() {
+    if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("text", textarea.value);
+    } else {
+        document.getElementById("err").innerHTML = "Localstorage not supported";
+    }
+}
 
-//read local storage
+function readLocalStorage() {
+    alert("reading");
+    if (typeof(Storage) !== "undefined") {
+        textarea.value = localStorage.getItem("text");
+    } else {
+        document.getElementById("err").innerHTML = "Localstorage not supported";
+    }
+}
 
+if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", readLocalStorage);
+} else {
+    readLocalStorage();
+}
 //
 // Open Settings Menu
 //
@@ -76,4 +77,8 @@ function init () {
 
 //
 // Loop: for when you're too lazy to code and just want it to run every sec
-//
+// Loop runs code every 1 second. useful for things like a live updating clock! Or if you want to spam the alert window... - George Z
+
+(function move() {
+    setTimeout(move, 1000);
+})();
