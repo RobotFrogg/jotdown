@@ -25,6 +25,15 @@ $(function() {
 //
 // Styling: Writing Tab Indent
 //
+document.getElementById('text').addEventListener('keydown', function(e) { //listen to  text, and if keydown
+    if (e.key == 'Tab') { //tab
+        e.preventDefault();
+        let start = this.selectionStart;
+        let end = this.selectionEnd;
+        this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
+        this.selectionStart = this.selectionEnd = start + 1;
+    }
+});
 
 //
 // Storage: Save Text Content In Editor
