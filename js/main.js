@@ -2,7 +2,7 @@ function init(){
         loadSettings()
 }
 
-// Toggle Colour Theme
+// Toggle Colour Theme //
 const btn = document.querySelector(".btn-toggle");
 const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
@@ -92,7 +92,7 @@ if (document.readyState === "loading") {
 
 
 
-//word counter function
+// word counter function //
 function wordCount(){
     let value = $.trim($('#text').val()),
         words = value.replace(/\s+/gi, ' ').split(' ').length,
@@ -105,7 +105,7 @@ function wordCount(){
 }
 $('textarea').on('input', wordCount);
 
-//turn off word counter
+// turn off word counter //
 
 
 // Close Settings //
@@ -121,18 +121,31 @@ $('textarea').on('input', wordCount);
 // Load Settings //
 function loadSettings() {
     const cookies = ['fontSize', 'fontFamily', 'darkMode', 'wordCounter', 'copyAll'];
+    let loadCookieSettings = true;
 
-    console.log('test');
-
-    for (let i = 0; i < document.cookie.split(';').length; i++) {
-        if (cookies.includes((document.cookie.split(';'))[i].trim())) {
+    for (let i = 0; i < cookies.length; i++) {
+        if (document.cookie.includes(cookies[i])) {
             // cookie exists, do nothing and later move on to load custom settings
         } else {
-            // no cookie by that name, create it + set default value?
-            console.log(document.cookie.split(';')[i]);
+            // if any one of the cookies is missing
+            loadCookieSettings = false;
+            break;
         }
     }
 
+    if (loadCookieSettings) {
+        console.log('all cookies found');
+        // actual loading in settings
+        
+    } else {
+        // one or more cookies not found, generate ALL default cookies
+        console.log('one or more cookies missing')
+        document.cookie = 'fontSize=20';
+        document.cookie = 'fontFamily=Tahoma';
+        document.cookie = 'darkMode=true';
+        document.cookie = 'wordCounter=true';
+        document.cookie = 'copyAll=true';
+    }
 }
 
 // change font size based on slider //
