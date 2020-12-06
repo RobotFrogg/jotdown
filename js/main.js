@@ -81,6 +81,22 @@ if (document.readyState === "loading") {
 
 
 
+//word counter function
+function wordCount(){
+    let value = $.trim($('#text').val()),
+        words = value.replace(/\s+/gi, ' ').split(' ').length,
+        characters = value.length;
+    if(!characters)words=0;
+
+    //$('#insert word counter element id here').html('<br>'+"W: "+ words +"  C: "+ characters);
+    //alert("W: "+ words +"  C: "+ characters);
+
+}
+$('textarea').on('input', wordCount);
+
+//turn off word counter
+
+
 // Close Settings //
 
 
