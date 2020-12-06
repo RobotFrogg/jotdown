@@ -18,9 +18,25 @@ $(function() {
 // Shortcut: Enable Menu Selection
 //
 
-//
-// Shortcut: Enable Menu Selection
-//
+// Shortcut: Enable Menu Selection //
+
+
+// Shortcut: Enable Menu Selection //
+
+
+
+// Styling: Writing Tab Indent //
+
+
+
+// Storage: Save Text Content In Editor //
+
+
+// write to local storage //
+
+
+//read local storage //
+
 
 //
 // Styling: Writing Tab Indent
@@ -66,23 +82,51 @@ if (document.readyState === "loading") {
 // Open Settings Menu
 //
 
-//
-// Close Settings
-//
+// Open Settings Menu //
 
-//
-// Settings Option
-//
 
-//change font size based on slider
 
-//turn off word counter
+// Close Settings //
 
-//turn off memory calculator
 
-//turn off time
 
-//time counter
+// Settings Option //
+
+
+// Save Settings //
+
+
+// Load Settings //
+function loadSettings() {
+    const cookies = ['fontSize', 'fontFamily', 'darkMode', 'wordCounter', 'copyAll'];
+
+    console.log('test');
+
+    for (let i = 0; i < document.cookie.split(';').length; i++) {
+        if (cookies.includes((document.cookie.split(';'))[i].trim())) {
+            // cookie exists, do nothing and later move on to load custom settings
+        } else {
+            // no cookie by that name, create it + set default value?
+            console.log(document.cookie.split(';')[i]);
+        }
+    }
+
+}
+
+
+
+// change font size based on slider //
+
+// turn off word counter //
+
+// turn off memory calculator //
+
+// turn off time //
+
+// time counter //
+
+
+// Loop: for when you're too lazy to code and just want it to run every sec //
 
 //
 // Loop: for when you're too lazy to code and just want it to run every sec
