@@ -37,6 +37,10 @@ function init () {
 //
 
 //
+// Shortcut: Enable Menu Selection
+//
+
+//
 // Styling: Writing Tab Indent
 //
 
