@@ -21,24 +21,25 @@
 
 <body onload="init();">
 
-  <!-- Setting Menu Begins Here -->
-  <a class="btn" onclick="openSettings()"><i class="fa fa-cog" aria-hidden="true"></i></a>
-  <div id="nav" class = "settings">
-    <div class="settingscontent">
-      <a href="javascript:void(0)" class="exitbtn" onclick="closeSettings()">&times;</a>
+  <div id="header">
 
+    <!-- Setting Menu Begins Here -->
+    <a class="btn" onclick="openSettings()"><i class="fa fa-cog" aria-hidden="true"></i></a>
+    <div id="nav" class="settings">
+      <div class="settingscontent">
+        <a href="javascript:void(0)" class="exitbtn" onclick="closeSettings()">&times;</a>
+      </div>
     </div>
+
+    <!-- Colour Theme Toggle -->
+    <div class="toggle-btn" id="color-toggle">
+      <input type="checkbox" onclick="toggleSetting('darkMode')">
+      <span></span>
+    </div>
+
   </div>
 
-
-<!-- Content Begins Here -->
-<!--  <button class="btn-toggle">[button]</button>-->
-
-  <div class="toggle-btn" id="color-toggle">
-    <input type="checkbox" onclick="toggleSetting('darkMode')">
-    <span></span>
-  </div>
-
+  <!-- Content Begins Here -->
   <div id="wordCounter"></div>
   <div id="memoryCounter"></div>
   <div class="text">
