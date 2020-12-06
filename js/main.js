@@ -40,7 +40,6 @@ function writeLocalStorage() {
 }
 
 function readLocalStorage() {
-    alert("reading");
     if (typeof(Storage) !== "undefined") {
         textarea.value = localStorage.getItem("text");
     } else {
