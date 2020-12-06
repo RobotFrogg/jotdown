@@ -1,9 +1,9 @@
 function init(){
-
+        loadSettings()
 }
 
 
-// Textarea Auto-Resize
+// Textarea Auto-Resize //
 $(function() {
     $('textarea').each(function() {
         this.setAttribute('style', 'height:' + (this.scrollHeight) + 'px;overflow-y:hidden;');
@@ -13,10 +13,8 @@ $(function() {
     });
 });
 
+// Shortcut: Enable Menu Selection //
 
-//
-// Shortcut: Enable Menu Selection
-//
 
 // Shortcut: Enable Menu Selection //
 
@@ -38,9 +36,7 @@ $(function() {
 //read local storage //
 
 
-//
-// Styling: Writing Tab Indent
-//
+// Styling: Writing Tab Indent //
 document.getElementById('text').addEventListener('keydown', function(e) { //listen to  text, and if keydown
     if (e.key == 'Tab') { //tab
         e.preventDefault();
@@ -51,9 +47,8 @@ document.getElementById('text').addEventListener('keydown', function(e) { //list
     }
 });
 
-//
-// Storage: Save Text Content In Editor
-//
+
+// Storage: Save Text Content In Editor //
 let textarea = document.getElementById("text");
 textarea.addEventListener('input', writeLocalStorage);
 
@@ -78,9 +73,9 @@ if (document.readyState === "loading") {
 } else {
     readLocalStorage();
 }
-//
-// Open Settings Menu
-//
+
+// Open Settings Menu //
+
 
 // Open Settings Menu //
 
@@ -113,8 +108,6 @@ function loadSettings() {
 
 }
 
-
-
 // change font size based on slider //
 
 // turn off word counter //
@@ -128,7 +121,7 @@ function loadSettings() {
 
 // Loop: for when you're too lazy to code and just want it to run every sec //
 
-//
+
 // Loop: for when you're too lazy to code and just want it to run every sec
 // Loop runs code every 1 second. useful for things like a live updating clock! Or if you want to spam the alert window... - George Z
 
