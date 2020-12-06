@@ -10,15 +10,19 @@ shortcuts.add('alt+q', function() {
 
 // Toggle Colour Theme //
 const toggle = document.getElementById("color-toggle");
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
+//const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
 
 toggle.addEventListener("click", function () {
-    if (prefersDarkScheme.matches) {
-        document.body.classList.toggle("light-theme");
-    } else {
-        document.body.classList.toggle("dark-theme");
-    }
+    document.body.classList.toggle("dark-theme")
 });
+
+// toggle.addEventListener("click", function () {
+//     if (prefersDarkScheme.matches) {
+//         document.body.classList.toggle("light-theme");
+//     } else {
+//         document.body.classList.toggle("dark-theme");
+//     }
+// });
 
 // Textarea Auto-Resize //
 $(function() {
