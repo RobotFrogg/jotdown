@@ -27,12 +27,14 @@ body.dark-theme {
 }
 
 textarea.dark-theme {
+    --hl-color:;
+    --hlt-color:;
     --text-color: #eee;
     --bkg-color: #222;
 }
 
 button.dark-theme {
-    --text-color: #eee;
+    --text-color: #eeeeee;
     --bkg-color: #222;
 }
 
@@ -182,4 +184,15 @@ input[type="checkbox"] {
 #color-toggle input[type="checkbox"]:checked + span:after {
     background-color: #eee;
     transform: translate(18px,0px);
+}
+
+/*customhighlightcolor*/
+::-moz-selection { /* Code for Firefox */
+    color: red;
+    background: yellow;
+}
+
+::selection {
+    color: red;
+    background: yellow;
 }
