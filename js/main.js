@@ -123,6 +123,22 @@ $('textarea').on('input', wordCount);
 
 
 // Save Settings //
+// no code here, cookies will be updated live whenever changes are made (ex. changing font size)
+// save darkMode preference
+function toggleSetting(setting) {
+
+    let settingsArray = document.cookie.split(';');
+
+    for (let i = 0; i < settingsArray.length; i ++) {
+        settingsArray[i] = settingsArray[i].trim();
+    }
+
+    if (settingsArray.includes(setting + '=true')) {
+        document.cookie = setting + '=false';
+    } else {
+        document.cookie = setting + '=true';
+    }
+}
 
 
 // Load Settings //
