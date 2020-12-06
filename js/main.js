@@ -32,17 +32,6 @@ $(function() {
 
 // Shortcut: Enable Menu Selection //
 
-
-// Shortcut: Enable Menu Selection //
-
-
-// Shortcut: Enable Menu Selection //
-
-
-
-// Styling: Writing Tab Indent //
-
-
 // Styling: Writing Tab Indent //
 document.getElementById('text').addEventListener('keydown', function(e) { //listen to  text, and if keydown
     if (e.key == 'Tab') { //tab
@@ -53,7 +42,6 @@ document.getElementById('text').addEventListener('keydown', function(e) { //list
         this.selectionStart = this.selectionEnd = start + 1;
     }
 });
-
 
 // Storage: Save Text Content In Editor //
 let textarea = document.getElementById("text");
@@ -91,7 +79,6 @@ function closeSettings() {
     document.getElementById("nav").style.width = "0%";
 }
 
-
 // word counter function //
 function wordCount(){
     let value = $.trim($('#text').val()),
@@ -107,13 +94,9 @@ $('textarea').on('input', wordCount);
 
 // turn off word counter //
 
-
 // Close Settings //
 
-
-
 // Settings Option //
-
 
 // Save Settings //
 // no code here, cookies will be updated live whenever changes are made (ex. changing font size)
@@ -132,7 +115,6 @@ function toggleSetting(setting) {
         document.cookie = setting + '=true';
     }
 }
-
 
 // Load Settings //
 function loadSettings() {
@@ -170,7 +152,6 @@ function loadSettings() {
 
 // turn off memory calculator ///
 
-
 // get time //
 function getTime() {
     let today = new Date();
@@ -184,11 +165,8 @@ function getTime() {
 
 // time counter //
 
-
 // Loop: for when you're too lazy to code and just want it to run every sec //
 
-
-// Loop: for when you're too lazy to code and just want it to run every sec
 // Loop runs code every 1 second. useful for things like a live updating clock! Or if you want to spam the alert window... - George Z
 
 (function move() {
