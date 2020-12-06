@@ -90,5 +90,11 @@ button {
     right: 40px;
 }
 
-
+#memoryCounter{
+    color: var(--text-color);
+    font-size: 15px;
+    position: fixed;
+    bottom: 55px;
+    right: 40px;
+}
 

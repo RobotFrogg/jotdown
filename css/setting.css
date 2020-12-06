@@ -1,66 +1,81 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-.wrapper{
+.settings {
   height: 100%;
-  width: 300px;
-  position: relative;
-}
-
-.wrapper .menu-btn {
-  position: absolute;
-  left: 16.5%;
-  top: 10px;
-  color: #4a4a4a;
-  height: 45px;
-  width: 45px;
-  z-index: 9999;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 23px;
-}
-
-.wrapper .menu-btn .setting{
-  opacity: 1;
-}
-.wrapper .menu-btn .close{
-  opacity: 0;
-}
-
-#btn:checked ~ .menu-btn .close{
-  opacity: 1;
-}
-
-#btn:checked ~ .menu-btn .setting{
-  opacity: 0;
-}
-
-#sidebar{
+  width: 0;
   position: fixed;
-  background: #ffffff;
-  height: 66%;
-  width: 66%;
-  overflow: hidden;
-  left: -66%;
-  z-index: 5000;
-  transition: all 0.3s ease;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: rgb(255, 255, 255);
+  background-color: rgba(0, 0, 0, 0.0);
+  overflow-x: hidden;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
 }
 
-#btn:checked ~ #sidebar{
-    left: 16.5%;
-}
-
-#sidebar .title{
-  line-height: 65px;
-  text-align: center;
-  color: var(--text-color);
+.settingscontent {
   background-color: var(--bkg-color);
-  font-size: 25px;
-  font-weight: 600;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.5) 0px 10px 10px;
+  padding: 30px;
+  width: 60%;
+  height: 60%;
+  text-align: left;
+  margin-top: 150px;
+  display: flex;
+  position: relative;
+  overflow: hidden !important;
+}
+
+
+.settings a {
+  padding: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #818181;
+  display: block;
+  transition: 0.1s;
+}
+
+.settings a:hover, .settings a:focus {
+  color: #f1f1f1;
+}
+
+.settings .exitbtn {
+  position: relative;
+  top: -20px;
+  left: 95%;
+  font-size: 60px;
+}
+
+@media screen and (max-height: 450px) {
+  .settings a {
+    font-size: 20px
+  }
+  .settings .closebtn {
+    font-size: 20px;
+  }
+}
+
+.btn {
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  position: relative;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 2px solid #8e8e8e;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  z-index: 10;
+  color: #8e8e8e;
+}
+
+.btn:hover {
+  color: var(--text-color);
+  border: 2px solid var(--text-color);
 }

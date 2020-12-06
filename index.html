@@ -20,17 +20,19 @@
 <body onload="init();">
 
   <!-- Setting Menu Begins Here -->
-  <div class="wrapper">
-    <a class="setting"><i class="fas fa-cog"></i></a>
-    <nav id="sidebar">
-      <div class="title">Setting</div>
-    </nav>
+  <a class="btn" onclick="openSettings()"><i class="fa fa-cog" aria-hidden="true"></i></a>
+  <div id="nav" class = "settings">
+    <div class="settingscontent">
+      <a href="javascript:void(0)" class="exitbtn" onclick="closeSettings()">&times;</a>
+
+    </div>
   </div>
+
 
   <!-- Content Begins Here -->
   <button class="btn-toggle">[button]</button>
   <div id="wordCounter"></div>
-
+  <div id="memoryCounter"></div>
   <div class="text">
     <textarea rows="1" id="text" placeholder="Start typing..."></textarea>
   </div>
