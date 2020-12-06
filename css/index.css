@@ -1,17 +1,58 @@
 /* Main Stylesheet */
 @import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300&display=swap');
 
+* {
+    font-family: 'Source Code Pro', monospace;
+}
+
 html {
     height: 100%;
 }
 
 html, body {
-    color: #222;
-    background: #fff;
     font: 100% system-ui;
     padding: 0;
     margin: 0;
     min-height: 100%;
+}
+
+body {
+    --text-color: #222;
+    --bkg-color: #fff;
+}
+
+body.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #222;
+}
+
+textarea.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #222;
+}
+
+button.dark-theme {
+    --text-color: #eee;
+    --bkg-color: #222;
+}
+
+
+/* Styles for users who prefer dark mode at the OS level */
+@media (prefers-color-scheme: dark) {
+    /* defaults to dark theme */
+    body {
+        --text-color: #eee;
+        --bkg-color: #222;
+    }
+    /* Override dark mode with light mode styles if the user decides to swap */
+    body.light-theme {
+        --text-color: #222;
+        --bkg-color: #fff;
+    }
+}
+
+body {
+    background: var(--bkg-color);
 }
 
 .text {
@@ -26,20 +67,16 @@ textarea {
     width: 100%;
     overflow: hidden;
     padding: 5px;
-    background-color: #fff;
+    color: var(--text-color);
+    background-color: var(--bkg-color);
     outline: none;
     resize: none;
-    font-family: 'Source Code Pro', monospace;
     font-size: 17px;
 }
 
-@media (prefers-color-scheme: dark) {
-    body {
-        color: #eee;
-        background: #222;
-    }
-    textarea {
-        color: #eee;
-        background-color: #222;
-    }
+button {
+    background-color: var(--bkg-color);
+    color: var(--text-color);
+    outline: none;
+    border: none;
 }
