@@ -79,7 +79,7 @@ button.dark-theme {
     max-width: 100%;
     width: calc(100% - 60px);
     padding: 30px;
-    position: sticky;
+    position: fixed;
     display: inline-block;
     pointer-events: none;
 }
