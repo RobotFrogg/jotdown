@@ -21,7 +21,7 @@
 .settingscontent {
   background-color: var(--bkg-color);
   border-radius: 5px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.5) 0px 10px 10px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.5) 0 10px 10px;
   padding: 30px;
   width: 60%;
   height: 60%;
@@ -80,13 +80,11 @@
   color: var(--text-color);
 }
 
-//
-
 .setting {
   margin-bottom: 30px;
 }
 .setting .name {
-  font-weight: :bolder;
+  font-weight: bolder;
   text-transform: uppercase;
   color: var(--text-color);
   font-size: 17px;
@@ -119,72 +117,7 @@
   cursor: pointer;
 }
 /* Controls */
-/* Switch */
-.switch {
-  position: relative;
-}
-.switch label {
-  width: 37px;
-  height: 21px;
-  position: absolute;
-  background: #5a6676;
-  top: 0;
-  left: 0;
-  border-radius: 50px;
-}
-.switch label:after {
-  content: '';
-  width: 13px;
-  height: 13px;
-  border-radius: 50px;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  background: var(--text-color);
-  transition: all 0.1s;
-}
-.switch input[type="checkbox"] {
-  visibility: true;
-}
-.switch input[type="checkbox"]:checked + label {
-  background: #f3a978;
-}
-.switch input[type="checkbox"]:checked + label:after {
-  left: 20px;
-}
-/* Checkbox */
-.checkbox {
-  width: 30px;
-  height: 30px;
-  background: #343f4c;
-  position: relative;
-}
-.checkbox label {
-  width: 28px;
-  height: 28px;
-  position: absolute;
-  top: 1px;
-  left: 1px;
-}
-.checkbox label:before {
-  content: '';
-  width: 9px;
-  height: 5px;
-  border: 3px solid #ffaf7b;
-  position: absolute;
-  border-top: 0;
-  border-right: 0;
-  transform: rotate(-45deg);
-  top: 8px;
-  left: 8px;
-  opacity: 0;
-}
-.checkbox input[type="checkbox"] {
-  visibility: true;
-}
-.checkbox input[type="checkbox"]:checked + label:before {
-  opacity: 1;
-}
+
 /* Slider */
 .slider {
   width: 95%;
