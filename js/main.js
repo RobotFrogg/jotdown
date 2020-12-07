@@ -6,11 +6,6 @@ function init() {
     focusToggle()
 }
 
-// Dummy Data Hotkeys //
-shortcuts.add('alt+q', function() {
-    alert("test");
-})
-
 // Toggle Colour Theme //
 const toggle = document.getElementById("color-toggle");
 //const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
@@ -106,9 +101,16 @@ function wordCount(){
 }
 $('textarea').on('input', wordCount);
 
-// turn off word counter //
 
-// Close Settings //
+
+//shortcut settings menu//
+shortcuts.add('alt+q', function() {
+    if ($('.settings').css('width') <= '10px') {
+        openSettings();
+    } else if ($('.settings').css('width') >= '10px') {
+        closeSettings();
+    }
+})
 
 // Settings Option //
 
