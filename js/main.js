@@ -13,9 +13,15 @@ function init() {
     console.log('all cookies found');
 
     // load fontSize
-    $("#text").css("font-size", settingsArray[5].replace('fontSize=', ''));
+    for (let i = 0; i < settingsArray.length; i ++) {
+        if (settingsArray[i].includes('fontSize=')) {
+            var fontSizeTemp = settingsArray[i].substr(9);
+        }
+    }
 
-    $(".value").text(settingsArray[5].replace('fontSize=', ''));
+    $("#text").css("font-size", fontSizeTemp);
+
+    $(".value").text(fontSizeTemp);
 }
 
 // Toggle Colour Theme //
