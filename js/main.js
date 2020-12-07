@@ -104,16 +104,17 @@ $('textarea').on('input', wordCount);
 // Settings Option //
 
 // Save Settings //
-// no code here, cookies will be updated live whenever changes are made (ex. changing font size)
+// not all saving code here, cookies will be updated live whenever changes are made (ex. changing font size)
 // save darkMode preference
 function toggleSetting(setting) {
 
+    // setup an cleaner array for easier access
     let settingsArray = document.cookie.split(';');
-
     for (let i = 0; i < settingsArray.length; i ++) {
         settingsArray[i] = settingsArray[i].trim();
     }
 
+    // toggle the cookie
     if (settingsArray.includes(setting + '=true')) {
         document.cookie = setting + '=false';
     } else {
@@ -137,19 +138,40 @@ function loadSettings() {
     }
 
     if (loadCookieSettings) {
-        console.log('all cookies found');
-
-        // load darkMode
-        if (document.cookie.includes('darkMode=true')) {
-
-            document.body.classList.toggle("dark-theme");
-            document.getElementById('darkmode-checkbox').checked = true;
-
-
-        } else{
-            // stay light mode
+        // setup an cleaner array for easier access
+        let settingsArray = document.cookie.split(';');
+        for (let i = 0; i < settingsArray.length; i ++) {
+            settingsArray[i] = settingsArray[i].trim();
         }
 
+        console.log('all cookies found');
+
+        // load fontSize
+        /*set the font here = */ settingsArray[1].replace('fontSize=', '') + 'px';
+        //... = document.cookie.includes('darkMode=true')
+
+        // load fontFamily
+        /*set font family here = */ settingsArray[2].replace('fontFamily', '');
+
+        // load darkMode
+        if (settingsArray.includes('darkMode=true')) {
+            document.body.classList.toggle("dark-theme");
+            document.getElementById('darkmode-checkbox').checked = true;
+        }
+
+        // load wordCounter
+        if (settingsArray.includes('wordCounter=true')) {
+            // probs nothing jsut show it
+        } else {
+            // hide the work counter somehow
+        }
+
+        // load timeEnabled
+        if (settingsArray.includes('timeEnabled=true')) {
+            // probs nothing just show it
+        } else {
+            // hide the work counter somehow
+        }
 
     } else {
         // one or more cookies not found, generate ALL default cookies
@@ -158,7 +180,7 @@ function loadSettings() {
         document.cookie = 'fontFamily=Tahoma';
         document.cookie = 'darkMode=false';
         document.cookie = 'wordCounter=true';
-        document.cookie = 'copyAll=true';
+        document.cookie = 'timeEnabled=true';
     }
 }
 

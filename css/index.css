@@ -19,51 +19,13 @@ html, body {
 body {
     --text-color: #222;
     --bkg-color: #fff;
+    background: var(--bkg-color);
+    transition: 0.5s ease-in;
 }
 
 body.dark-theme {
     --text-color: #eee;
     --bkg-color: #222;
-}
-
-textarea.dark-theme {
-    /*--hl-color:;*/
-    /*--hlt-color:;*/
-    --text-color: #eee;
-    --bkg-color: #222;
-}
-
-button.dark-theme {
-    --text-color: #eeeeee;
-    --bkg-color: #222;
-}
-
-#header {
-    padding: 30px;
-}
-
-/* Styles for users who prefer dark mode at the OS level */
-/*@media (prefers-color-scheme: dark) {*/
-    /* defaults to dark theme */
-    body.dark-theme {
-        --text-color: #eee;
-        --bkg-color: #222;
-    }
-    /* Override dark mode with light mode styles if the user decides to swap */
-    body {
-        --text-color: #222;
-        --bkg-color: #fff;
-    }
-/*}*/
-
-body {
-    background: var(--bkg-color);
-}
-
-.text {
-    position: relative;
-    max-width: 100%;
-    margin: auto;
 }
 
 textarea {
@@ -77,6 +39,14 @@ textarea {
     outline: none;
     resize: none;
     font-size: 17px;
+    transition: 0.5s ease-in;
+}
+
+textarea.dark-theme {
+    /*--hl-color:;*/
+    /*--hlt-color:;*/
+    --text-color: #eee;
+    --bkg-color: #222;
 }
 
 button {
@@ -84,6 +54,22 @@ button {
     color: var(--text-color);
     outline: none;
     border: none;
+    transition: 0.5s ease-in;
+}
+
+button.dark-theme {
+    --text-color: #eeeeee;
+    --bkg-color: #222;
+}
+
+#header {
+    padding: 30px;
+}
+
+.text {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
 }
 
 /* On Screen Interface Elements*/
