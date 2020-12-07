@@ -42,23 +42,22 @@ textarea {
     transition: 0.2s ease-in;
 }
 
+/* custom highlighter code begins */
+
+textarea::selection {
+    --bkg: rgba(131, 92, 193, 0.3);
+    background: var(--bkg);
+}
+
+textarea::-moz-selection {
+    --bkg: rgba(131, 92, 193, 0.3);
+    background: var(--bkg);
+}
+
+/* custom highlighter code ends */
+
 textarea.dark-theme {
-    /*--hl-color:;*/
-    /*--hlt-color:;*/
     --text-color: #eee;
-    --bkg-color: #222;
-}
-
-button {
-    background-color: var(--bkg-color);
-    color: var(--text-color);
-    outline: none;
-    border: none;
-    transition: 0.2s ease-in;
-}
-
-button.dark-theme {
-    --text-color: #eeeeee;
     --bkg-color: #222;
 }
 
@@ -186,18 +185,6 @@ input[type="checkbox"] {
     background-color: #eee;
     transform: translate(18px,0px);
 }
-
-/*customhighlightcolor*/
-::-moz-selection { /* Code for Firefox */
-    color: red;
-    background: yellow;
-}
-
-::selection {
-    color: red;
-    background: yellow;
-}
-
 
 /*hide and reveal options*/
 .visible {
