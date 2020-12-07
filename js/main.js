@@ -1,6 +1,7 @@
 loadSettings();
 
 function init() {
+    getTime();
     wordCount();
 }
 
