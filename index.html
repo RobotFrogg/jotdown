@@ -29,6 +29,65 @@
     <div id="nav" class="settings">
       <div class="settingscontent">
         <a href="javascript:void(0)" class="exitbtn" onclick="closeSettings()">&times;</a>
+        <div id="settingfade">
+          <h1>Settings</h1>
+          <div class="setting">
+            <div class="name">
+              font size
+            </div>
+            <div class="info">
+              <div class="slider">
+                Choose a size comfortable to read! <span class="value">17px</span>
+                <input
+                        type="range"
+                        name="range"
+                        id="range-slider"
+                        class="range-slider"
+                        min="10"
+                        max="45"
+                        value="17"
+                        step="1"
+                />
+              </div>
+              <br>
+            </div>
+          </div>
+          <div class="setting">
+            <div class="name">
+              Word Count
+            </div>
+            <div class="info">
+              See how much you've typed.
+              <div class="switch">
+
+                <input id="wordcount-enabled" type="checkbox">
+                <!--                            <label for="wordcount-enabled"></label>-->
+              </div>
+            </div>
+          </div>
+          <div class="setting">
+            <div class="name">
+              Space Calculator
+            </div>
+            <div class="info">
+              This displays how much of that storage is being used.
+              <div class="switch">
+                <input checked="checked" id="storagecalc-enabled" type="checkbox">
+              </div>
+            </div>
+          </div>
+          <div class="setting">
+            <div class="name">
+              Make settings button invisible
+            </div>
+            <div class="info">
+              Don't worry! You can always access the settings with ALT + Z.
+              <div class="switch">
+                <input checked="checked" id="settingsbtn-enabled" type="checkbox">
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
 

@@ -185,7 +185,7 @@ function loadSettings() {
         }
 
         // load hideAll
-        
+
 
     } else {
         // one or more cookies not found, generate ALL default cookies
@@ -244,6 +244,15 @@ function getTime() {
     let dateTime = date + ' ' + time;
     $('#clock').html(dateTime);
 }
+
+//size changer
+$(function() {
+    $("#range-slider").on("input change", function () {
+        $("#text").css("font-size", $(this).val() + "px");
+        $("#preview").css("font-size", $(this).val() + "px");
+        $(".value").text($(this).val() + "px");
+    });
+});
 
 
 
