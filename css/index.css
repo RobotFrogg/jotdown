@@ -197,3 +197,16 @@ input[type="checkbox"] {
     color: red;
     background: yellow;
 }
+
+
+/*hide and reveal options*/
+.visible {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity .4s ease-in;
+}
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .4s, opacity .4s ease-in;
+}
