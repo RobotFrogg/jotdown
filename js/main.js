@@ -89,13 +89,29 @@ if (document.readyState === "loading") {
 } else {
     readLocalStorage();
 }
+//
+// let settingStuff = false;
+// let body = document.querySelector("body");
+// let settingsMenu = document.getElementById("nav");
+//
+// body.addEventListener("click", function() {
+//     if (settingStuff) {
+//         closeSettings();
+//     }
+// }, false);
+// settingsMenu.addEventListener("click", function(ev) {
+//     if (settingStuff) {
+//         ev.stopPropagation();
+//     }
+// }, false);
 
 // Open Settings Menu //
 function openSettings() {
     document.getElementById("nav").style.width = "100%";
+    settingStuff = true;
 }
 
-// Open Settings Menu //
+// Close Settings Menu //
 function closeSettings() {
     document.getElementById("nav").style.width = "0%";
 }
