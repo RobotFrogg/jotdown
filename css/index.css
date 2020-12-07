@@ -27,8 +27,8 @@ body.dark-theme {
 }
 
 textarea.dark-theme {
-    --hl-color:;
-    --hlt-color:;
+    /*--hl-color:;*/
+    /*--hlt-color:;*/
     --text-color: #eee;
     --bkg-color: #222;
 }
@@ -39,7 +39,7 @@ button.dark-theme {
 }
 
 #header {
-    padding: 15px;
+    padding: 30px;
 }
 
 /* Styles for users who prefer dark mode at the OS level */
@@ -87,28 +87,40 @@ button {
 }
 
 /* On Screen Interface Elements*/
+
+#footer {
+    bottom: 0;
+    max-width: 100%;
+    width: calc(100% - 60px);
+    padding: 30px;
+    position: sticky;
+    display: inline-block;
+    pointer-events: none;
+}
+
 #wordCounter{
     color: var(--text-color);
     font-size: 15px;
-    position: fixed;
-    bottom: 40px;
-    right: 40px;
+    float: right;
+    /*position: fixed;*/
+    /*bottom: 40px;*/
+    /*right: 40px;*/
 }
 
 #memoryCounter{
     color: var(--text-color);
     font-size: 15px;
-    position: fixed;
-    bottom: 55px;
-    right: 40px;
+    /*position: fixed;*/
+    /*bottom: 55px;*/
+    /*right: 40px;*/
 }
 #clock{
     color: var(--text-color);
     font-size: 15px;
-    position: fixed;
-    bottom: 40px;
-    left: 40px;
-
+    float: left;
+    /*position: fixed;*/
+    /*bottom: 40px;*/
+    /*left: 40px;*/
 }
 .toggle-btn {
     position: relative;

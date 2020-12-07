@@ -91,7 +91,7 @@ function wordCount(){
         characters = value.length;
     if(!characters)words=0;
 
-    $('#wordCounter').html('<br>'+"W: "+ words +"  C: "+ characters);
+    $('#wordCounter').html("W: "+ words +"  C: "+ characters);
     //alert("W: "+ words +"  C: "+ characters);
 
 }
