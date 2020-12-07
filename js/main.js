@@ -4,6 +4,18 @@ function init() {
     getTime();
     wordCount();
     focusToggle()
+
+    let settingsArray = document.cookie.split(';');
+    for (let i = 0; i < settingsArray.length; i ++) {
+        settingsArray[i] = settingsArray[i].trim();
+    }
+
+    console.log('all cookies found');
+
+    // load fontSize
+    $("#text").css("font-size", settingsArray[5].replace('fontSize=', ''));
+
+    $(".value").text(settingsArray[5].replace('fontSize=', ''));
 }
 
 // Toggle Colour Theme //
@@ -135,7 +147,7 @@ function toggleSetting(setting) {
 
 // Load Settings //
 function loadSettings() {
-    const cookies = ['fontSize', 'fontFamily', 'darkMode', 'wordCounter', 'copyAll'];
+    const cookies = ['fontSize', 'fontFamily', 'darkMode', 'wordCounter', 'timeEnabled', 'hideAll'];
     let loadCookieSettings = true;
 
     for (let i = 0; i < cookies.length; i++) {
@@ -158,11 +170,13 @@ function loadSettings() {
         console.log('all cookies found');
 
         // load fontSize
-        /*set the font here = */ settingsArray[1].replace('fontSize=', '') + 'px';
-        //... = document.cookie.includes('darkMode=true')
+        $("#text").css("font-size", settingsArray[5].replace('fontSize=', ''));
+
+        $(".value").text(settingsArray[5].replace('fontSize=', ''));
+
 
         // load fontFamily
-        /*set font family here = */ settingsArray[2].replace('fontFamily', '');
+        /*set font family here = */ //settingsArray[2].replace('fontFamily', '');
 
         // load darkMode
         if (settingsArray.includes('darkMode=true')) {
@@ -249,6 +263,7 @@ function getTime() {
 $(function() {
     $("#range-slider").on("input change", function () {
         $("#text").css("font-size", $(this).val() + "px");
+        document.cookie = 'fontSize=' + $(this).val() + 'px';
         $(".value").text($(this).val() + "px");
     });
 });
