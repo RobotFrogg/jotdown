@@ -16,6 +16,7 @@ const toggle = document.getElementById("color-toggle");
 
 toggle.addEventListener("click", function () {
     document.body.classList.toggle("dark-theme")
+    toggleSetting('darkMode');
 });
 
 // toggle.addEventListener("click", function () {
