@@ -20,7 +20,7 @@ body {
     --text-color: #222;
     --bkg-color: #fff;
     background: var(--bkg-color);
-    transition: 0.5s ease-in;
+    transition: 0.2s ease-in;
 }
 
 body.dark-theme {
@@ -54,7 +54,7 @@ button {
     color: var(--text-color);
     outline: none;
     border: none;
-    transition: 0.5s ease-in;
+    transition: 0.2s ease-in;
 }
 
 button.dark-theme {
