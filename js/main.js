@@ -3,12 +3,8 @@ loadSettings();
 function init() {
     getTime();
     wordCount();
+    focusToggle()
 }
-
-// Dummy Data Hotkeys //
-shortcuts.add('alt+q', function() {
-    alert("test");
-})
 
 // Toggle Colour Theme //
 const toggle = document.getElementById("color-toggle");
@@ -105,9 +101,16 @@ function wordCount(){
 }
 $('textarea').on('input', wordCount);
 
-// turn off word counter //
 
-// Close Settings //
+
+//shortcut settings menu//
+shortcuts.add('alt+q', function() {
+    if ($('.settings').css('width') <= '10px') {
+        openSettings();
+    } else if ($('.settings').css('width') >= '10px') {
+        closeSettings();
+    }
+})
 
 // Settings Option //
 
@@ -198,9 +201,40 @@ function loadSettings() {
 
 // change font size based on slider //
 
-// turn off word counter //
+//turn everything off aka focus mode//
 
-// turn off memory calculator ///
+shortcuts.add('alt+w', function() {
+    focusToggle();
+})
+let hideall = false;
+function focusToggle() {
+    let element = document.getElementById("clock");
+    let element1 = document.getElementById("wordCounter");
+    let element2 = document.getElementById("settingsBtn");
+    let element3 = document.getElementById("color-toggle");
+
+    if (hideall == true) {
+        element.classList.remove("visible");
+        element.classList.add("hidden");
+        element1.classList.remove("visible");
+        element1.classList.add("hidden");
+        element2.classList.remove("visible");
+        element2.classList.add("hidden");
+        element3.classList.remove("visible");
+        element3.classList.add("hidden");
+        hideall = false;
+    }else if(hideall==false){
+        element.classList.remove("hidden");
+        element.classList.add("visible");
+        element1.classList.remove("hidden");
+        element1.classList.add("visible");
+        element2.classList.remove("hidden");
+        element2.classList.add("visible");
+        element3.classList.remove("hidden");
+        element3.classList.add("visible");
+        hideall = true;
+    }
+}
 
 // get time //
 function getTime() {
@@ -211,7 +245,7 @@ function getTime() {
     $('#clock').html(dateTime);
 }
 
-// turn off time //
+
 
 // time counter //
 
@@ -222,11 +256,5 @@ function getTime() {
 (function move() {
     setTimeout(move, 1000);
     getTime();
-})();
-
-
-(function move() {
-    localStorageSpace();
-    setTimeout(move, 50);
 })();
 
