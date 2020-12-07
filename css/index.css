@@ -39,7 +39,7 @@ textarea {
     outline: none;
     resize: none;
     font-size: clamp(17px, 2vw, 24px);
-    transition: 0.5s ease-in;
+    transition: 0.2s ease-in;
 }
 
 textarea.dark-theme {
@@ -83,10 +83,12 @@ button.dark-theme {
     display: inline-block;
     pointer-events: none;
     font-size: clamp(15px, 1.5vw, 20px);
+    background-color: var(--bkg-color);
+    color: var(--text-color);
 }
 
 #wordCounter{
-    color: var(--text-color);
+    /*color: var(--text-color);*/
     /*font-size: 15px;*/
     float: right;
     /*position: fixed;*/
@@ -95,14 +97,14 @@ button.dark-theme {
 }
 
 #memoryCounter{
-    color: var(--text-color);
+    /*color: var(--text-color);*/
     /*font-size: 15px;*/
     /*position: fixed;*/
     /*bottom: 55px;*/
     /*right: 40px;*/
 }
 #clock{
-    color: var(--text-color);
+    /*color: var(--text-color);*/
     /*font-size: 15px;*/
     float: left;
     /*position: fixed;*/

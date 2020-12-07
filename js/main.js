@@ -48,6 +48,12 @@ document.getElementById('text').addEventListener('keydown', function(e) { //list
         this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
         this.selectionStart = this.selectionEnd = start + 1;
     }
+    if (document.getElementById("text").style.height >= "calc(100% - 60px)") {
+        document.getElementById("footer").style.position = "relative";
+    }
+    else {
+        document.getElementById("footer").style.position = "fixed";
+    }
 });
 
 // Storage: Save Text Content In Editor //
@@ -175,14 +181,18 @@ function loadSettings() {
             // hide the work counter somehow
         }
 
+        // load hideAll
+        
+
     } else {
         // one or more cookies not found, generate ALL default cookies
         console.log('one or more cookies missing')
-        document.cookie = 'fontSize=20';
-        document.cookie = 'fontFamily=Tahoma';
+        document.cookie = 'fontSize=20'; // might have to dynamically take from their screen size here ////////////////////////////////
+        document.cookie = 'fontFamily=Source Code Pro';
         document.cookie = 'darkMode=false';
         document.cookie = 'wordCounter=true';
         document.cookie = 'timeEnabled=true';
+        document.cookie = 'hideAll=false';
     }
 }
 
