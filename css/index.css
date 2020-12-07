@@ -39,7 +39,7 @@ textarea {
     outline: none;
     resize: none;
     font-size: clamp(17px, 2vw, 24px);
-    transition: 0.5s ease-in;
+    transition: 0.2s ease-in;
 }
 
 textarea.dark-theme {
