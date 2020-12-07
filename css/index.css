@@ -38,7 +38,7 @@ textarea {
     background-color: var(--bkg-color);
     outline: none;
     resize: none;
-    font-size: 17px;
+    font-size: clamp(17px, 2vw, 24px);
     transition: 0.5s ease-in;
 }
 
@@ -82,11 +82,12 @@ button.dark-theme {
     position: fixed;
     display: inline-block;
     pointer-events: none;
+    font-size: clamp(15px, 1.5vw, 20px);
 }
 
 #wordCounter{
     color: var(--text-color);
-    font-size: 15px;
+    /*font-size: 15px;*/
     float: right;
     /*position: fixed;*/
     /*bottom: 40px;*/
@@ -95,14 +96,14 @@ button.dark-theme {
 
 #memoryCounter{
     color: var(--text-color);
-    font-size: 15px;
+    /*font-size: 15px;*/
     /*position: fixed;*/
     /*bottom: 55px;*/
     /*right: 40px;*/
 }
 #clock{
     color: var(--text-color);
-    font-size: 15px;
+    /*font-size: 15px;*/
     float: left;
     /*position: fixed;*/
     /*bottom: 40px;*/
