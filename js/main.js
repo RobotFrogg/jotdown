@@ -48,6 +48,12 @@ document.getElementById('text').addEventListener('keydown', function(e) { //list
         this.value = this.value.substring(0, start) + "\t" + this.value.substring(end);
         this.selectionStart = this.selectionEnd = start + 1;
     }
+    if (document.getElementById("text").style.height >= "calc(100% - 60px)") {
+        document.getElementById("footer").style.position = "relative";
+    }
+    else {
+        document.getElementById("footer").style.position = "fixed";
+    }
 });
 
 // Storage: Save Text Content In Editor //
