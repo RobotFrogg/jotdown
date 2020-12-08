@@ -22,6 +22,9 @@ function init() {
     $("#text").css("font-size", fontSizeTemp);
 
     $(".value").text(fontSizeTemp);
+
+    // document.getElementById("range-slider").value = fontSizeTemp.substr(0,2);
+    $("#range-slider").val(fontSizeTemp.substr(0,2));
 }
 
 // Toggle Colour Theme //
