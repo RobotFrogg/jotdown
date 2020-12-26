@@ -153,7 +153,7 @@ shortcuts.add('alt+q', function() {
 
 // Save Settings //
 // not all saving code here, cookies will be updated live whenever changes are made (ex. changing font size)
-// save darkMode preference
+// toggle boolean cookies
 function toggleSetting(setting) {
 
     // setup an cleaner array for easier access
